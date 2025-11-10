@@ -18,7 +18,7 @@ jobs:
     - run: sudo apt-get update && sudo apt-get install -y lld llvm
     - name: Build
       run: cargo build --verbose -r && llvm-objcopy -O binary target/aarch64-unknown-none/release/efilite efilite.bin
-    - uses: actions/upload-artifact@v4
+    - uses: actions/upload-artifact@v5
       with:
         name: efilite-mach-virt.img
         path: efilite.bin
